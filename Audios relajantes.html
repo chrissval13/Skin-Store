@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audios Relajantes</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+      <h1>Audios relajantes</h1>
+    
+      <div id="albumes">
+        <div class="album">
+          <h2>Álbum 1</h2>
+          <ul>
+            <li><a href="#" data-src="Audio1.mp3">Canción 1</a></li>
+            <li><a href="#" data-src="Audio2.mp3">Canción 2</a></li>
+            <li><a href="#" data-src="cancion3.mp3">Canción 3</a></li>
+          </ul>
+        </div>
+    
+        <div class="album">
+          <h2>Álbum 2</h2>
+          <ul>
+            <li><a href="#" data-src="cancion4.mp3">Canción 4</a></li>
+            <li><a href="#" data-src="cancion5.mp3">Canción 5</a></li>
+            <li><a href="#" data-src="cancion6.mp3">Canción 6</a></li>
+          </ul>
+        </div>
+      </div>
+    
+      <div id="controles">
+        <button id="reproducir-todos">Reproducir todos</button>
+        <button id="reproducir-aleatorio">Reproducir aleatorio</button>
+      </div>
+    
+      <audio id="reproductor" controls></audio>
+    
+      <script>
+        // Obtener elementos del DOM
+        var reproducirTodosBtn = document.getElementById("reproducir-todos");
+        var reproducirAleatorioBtn = document.getElementById("reproducir-aleatorio");
+        var reproductor = document.getElementById("reproductor");
+    
+        // Manejar eventos de clic en los enlaces de canciones
+        $("a").click(function(e) {
+          e.preventDefault();
+          var src = $(this).data("src");
+          reproductor.src = src;
+          reproductor.play();
+        });
+    
+        // Manejar evento de clic en el botón de reproducir todos
+        reproducirTodosBtn.addEventListener("click", function() {
+          var canciones = document.querySelectorAll("a");
+          if (canciones.length > 0) {
+            reproductor.src = canciones[0].dataset.src;
+            reproductor.play();
+          }
+        });
+    
+        // Manejar evento de clic en el botón de reproducir aleatorio
+        reproducirAleatorioBtn.addEventListener("click", function() {
+          var canciones = document.querySelectorAll("a");
+          if (canciones.length > 0) {
+            var index = Math.floor(Math.random() * canciones.length);
+            reproductor.src = canciones[index].dataset.src;
+            reproductor.play();
+          }
+        });
+      </script>
+  
+</body>
+</html>

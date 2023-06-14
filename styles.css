@@ -1,0 +1,69 @@
+/* Estilos para la barra de navegación */
+nav ul {
+    list-style-type: none;
+    margin: 1;
+    padding: 1;
+    color: #325596;
+  }
+  
+  nav li {
+    display: inline-block;
+    margin-right: 10px;
+    color: #325596;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  
+  nav li a {
+    text-decoration: none;
+    color: #325596;
+    padding: 5px;
+  }
+  
+  /* Estilos para el encabezado */
+  header {
+    background-color: #c2f2e1;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h1 {
+    margin: 0;
+  }
+  
+  h3 {
+    margin-top: 10px;
+  }
+  
+  /* Estilos para el formulario de contacto */
+  form {
+    margin-top: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+  }
+  
+  input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  /* Estilos para el pie de página */
+  footer {
+    background-color: #1753a7;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+  
